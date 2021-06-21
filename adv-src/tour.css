@@ -1,0 +1,332 @@
+body.no-select {
+    user-select: none;
+    pointer-events: none;
+    transition-property: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    transform: translateY(-5%);
+}
+
+.modal-open.modal {
+    transition: 300ms ease-in;
+    transition-property: opacity, visibility;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+@keyframes lideIn {
+    from {
+        transform: translateY(-5%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-dialog {
+    max-width: 420px;
+    margin: 1.75rem auto;
+    min-height: calc(100% - 3.5rem);
+    display: flex;
+    align-items: center;
+    animation: lideIn .2s cubic-bezier(0.0, 0.0, 0.2, 1) forwards;
+}
+
+.modal-open.modal.prepare-removing .modal-dialog {
+    animation: lideOut .2s cubic-bezier(0.0, 0.0, 0.2, 1) forwards;
+}
+
+@keyframes lideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-15%);
+        opacity: 0;
+    }
+}
+
+.modal-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    outline: 0;
+}
+
+.tour-title,
+.tour-descr {
+    text-align: center;
+}
+
+.tour-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.tour-descr,
+.tip-inner .tip-descr {
+    color: #666666;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.tour-content {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+.tour-buttons {
+    margin-top: 2rem;
+}
+
+.tour-button {
+    outline: none;
+    border: none;
+    padding: 0.65rem 2rem;
+    background: transparent;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    font-weight: 600;
+    transition: 150ms ease-in;
+    transition-property: border, background, color;
+    font-size: 0.95rem;
+}
+
+.modal .tour-button {
+    flex: 0 0 calc(50% - 1rem);
+    padding: 0.75rem 2rem;
+}
+
+.tour-button+.tour-button {
+    margin-left: 1rem;
+}
+
+.tour-main {
+    background: #2A2A2A;
+    color: #fff;
+}
+
+.tour-sec {
+    border: 1px solid #d3d3d3;
+}
+
+.tour-sec:hover {
+    background: #fbf4de;
+    border-color: #fbf4de;
+}
+
+.tour-main:hover {
+    background: #ECD58C;
+    color: #2A2A2A;
+}
+
+.tour-img {
+    overflow: hidden;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    position: relative;
+}
+
+.tour-img:before {
+    content: '';
+    display: table;
+    box-sizing: border-box;
+    width: 0;
+    height: 100%;
+    padding-bottom: 48.5%;
+}
+
+.tour-img img,
+.tour-img iframe {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.tour-img iframe {
+    height: 204px;
+}
+
+.tour-el-active {
+    position: relative;
+    box-shadow: 0 100px 10px 100vw #2a2a2a2a;
+    transition: 10ms linear;
+    transition-property: box-shadow;
+    background: #fff;
+    z-index: 300;
+    border-color: #fff;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.tour-el-active:hover {
+    background: #fff;
+}
+
+.tip {
+    position: absolute;
+    left: calc(100% + 1.5rem);
+    top: 0;
+    width: 280px;
+    background: #fff;
+    padding: 1rem;
+    cursor: default;
+    border-radius: 0.25rem;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(1rem, 0);
+    transition: 200ms ease-in;
+    transition-property: opacity, transform, visibility;
+}
+
+.tip.tip-show {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.tip.prepare-removing {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(1rem, 0);
+}
+
+.tip .tour-button {
+    pointer-events: all;
+}
+
+.tip-title {
+    margin: 0 0 0.5rem 0;
+}
+
+.tip-icon {
+    background: #f0f0f0;
+    width: 3.75rem;
+    height: 3.75rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.tip-icon img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.tip-descr {
+    margin: 0 0 2rem 0;
+    color: #484848;
+    font-weight: 400;
+}
+
+.tip-inner {
+    position: relative;
+}
+
+.tip-inner:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 20px 10px 0;
+    border-color: transparent #fff transparent transparent;
+    position: absolute;
+    top: -5px;
+    left: -30px;
+}
+
+.will-close {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.restart-tour {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0, 20px);
+    transition: 150ms ease-in;
+    transition-property: transform, opacity, visibility;
+}
+
+.restart-tour.restart-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.restart-tour.restart-procesing {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0, 20px);
+}
+
+.restart-tour-content {
+    padding: 1rem 2rem 1rem 1rem;
+}
+
+.restart-tour-content .tour-title {
+    text-align: left;
+    margin-bottom: 0.25rem;
+}
+
+.restart-tour-content .tour-buttons {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.restart-tour-content .tour-descr {
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+.restart-tour-img {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.restart-tour-inner {
+    display: flex;
+}
+
+.restart-tour-img img {
+    z-index: 10;
+    object-fit: cover;
+    height: auto;
+    width: 150px;
+}

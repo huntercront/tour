@@ -1,0 +1,61 @@
+
+
+/* Start:/bitrix/templates/80bit_authorization/components/bitrix/news/kurs_active/bitrix/news.list/.default/style.css?1603887352150*/
+div.news-list
+{
+	word-wrap: break-word;
+}
+div.news-list img.preview_picture
+{
+	float:left;
+	margin:0 4px 6px 0;
+}
+.news-date-time {
+	color:#486DAA;
+}
+
+/* End */
+
+
+/* Start:/bitrix/templates/.default/components/bitrix/news.detail/kurs_detail/style.css?1603886187155*/
+div.news-detail
+{
+	word-wrap: break-word;
+}
+div.news-detail img.detail_picture
+{
+	float:left;
+	margin:0 8px 6px 1px;
+}
+.news-date-time
+{
+	color:#486DAA;
+}
+
+/* End */
+
+
+/* Start:/bitrix/templates/.default/components/bitrix/news.list/training__login_new/style.css?1621787468150*/
+div.news-list
+{
+	word-wrap: break-word;
+}
+div.news-list img.preview_picture
+{
+	float:left;
+	margin:0 4px 6px 0;
+}
+.news-date-time {
+	color:#486DAA;
+}
+
+/* End */
+
+
+/* Start:/bitrix/components/bitrix/system.show_message/templates/.default/style.min.css?160466452751*/
+font.errortext{color:red}font.notetext{color:green}
+/* End */
+/* /bitrix/templates/80bit_authorization/components/bitrix/news/kurs_active/bitrix/news.list/.default/style.css?1603887352150 */
+/* /bitrix/templates/.default/components/bitrix/news.detail/kurs_detail/style.css?1603886187155 */
+/* /bitrix/templates/.default/components/bitrix/news.list/training__login_new/style.css?1621787468150 */
+/* /bitrix/components/bitrix/system.show_message/templates/.default/style.min.css?160466452751 */
