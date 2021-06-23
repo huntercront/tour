@@ -1,3 +1,41 @@
+.sidebar__link,
+.sidebar__link__mobile,
+.telegram__name,
+.instagram__name {
+    position: relative;
+    z-index: 10;
+}
+
+.c-c,
+.c-s {
+    display: flex;
+    align-items: center;
+}
+
+.c-s {
+    justify-content: flex-start;
+}
+
+.c-c {
+    justify-content: center;
+}
+
+.icon {
+    position: relative;
+    margin-right: 0.5rem;
+}
+
+.icon svg,
+.icon img {
+    width: 100%;
+}
+
+.icon-m {
+    width: 1.45rem;
+    height: 1.45rem;
+    flex: 0 0 1.45rem;
+}
+
 body.no-select {
     user-select: none;
     pointer-events: none;
@@ -31,6 +69,7 @@ body.no-select {
     visibility: visible;
     opacity: 1;
     transform: translateY(0%);
+    pointer-events: all;
 }
 
 @keyframes lideIn {
@@ -46,6 +85,7 @@ body.no-select {
 
 .modal-dialog {
     max-width: 420px;
+    width: 90%;
     margin: 1.75rem auto;
     min-height: calc(100% - 3.5rem);
     display: flex;
@@ -172,7 +212,8 @@ body.no-select {
 }
 
 .tour-img iframe {
-    height: 204px;
+    max-height: 204px;
+    height: 100%;
 }
 
 .tour-el-active {
@@ -225,6 +266,9 @@ body.no-select {
 
 .tip-title {
     margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: left;
 }
 
 .tip-icon {
@@ -244,6 +288,7 @@ body.no-select {
     margin: 0 0 2rem 0;
     color: #484848;
     font-weight: 400;
+    text-align: left;
 }
 
 .tip-inner {
@@ -329,4 +374,102 @@ body.no-select {
     object-fit: cover;
     height: auto;
     width: 150px;
+}
+
+.restart-tour-img picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .restart-tour {
+        bottom: 5rem;
+    }
+    .tip {
+        transform: translate(0, 0);
+        bottom: 4rem;
+    }
+    .tip.prepare-removing {
+        transform: translate(0, 0.5rem);
+    }
+    .tip-inner:before {
+        display: none;
+    }
+    .top-right {
+        top: 3rem;
+        right: 0rem;
+        left: auto;
+        bottom: auto;
+    }
+    .bottom-Left-50 {
+        top: auto;
+        left: calc(50% - 140px);
+        right: auto;
+    }
+    .bottom-Left {
+        top: auto;
+        left: 0;
+        right: auto;
+    }
+    .bottom-Left-10 {
+        top: auto;
+        left: -40px;
+        right: auto;
+    }
+    .bottom-right-10 {
+        top: auto;
+        left: auto;
+        right: -40px;
+    }
+    .bottom-right {
+        top: auto;
+        left: auto;
+        right: 0;
+    }
+    .tour-el-active {
+        box-shadow: 0 100px 10px 250vh #2a2a2a2a;
+    }
+    .tour-button {
+        font-size: 0.8rem;
+    }
+    .tour-descr,
+    .tip-inner .tip-descr {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    .tip-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .tip-icon img {
+        width: 1.5rem;
+    }
+    .tip-title {
+        font-size: 1rem;
+    }
+    .tour-content {
+        padding: 1rem;
+    }
+    .restart-tour-inner {
+        flex-direction: column;
+        max-width: 320px;
+    }
+    .restart-tour-content {
+        padding-right: 1rem;
+    }
+    .restart-tour-img picture {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .restart-tour-img {
+        height: auto;
+        border-bottom-left-radius: 0rem;
+        border-top-right-radius: 0.5rem;
+    }
+    .restart-tour-img img {
+        width: 100%;
+        object-fit: unset;
+    }
 }
